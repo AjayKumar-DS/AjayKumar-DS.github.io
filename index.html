@@ -3,413 +3,383 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ajay Kumar — Data Science & Monitoring Engineer Portfolio</title>
+<title>Ajay Kumar — Data Science Portfolio</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* -------------------------
-GLOBAL STYLES
--------------------------- */
-:root {
-  --bg-start: #071226;
-  --bg-end: #071b2b;
-  --accent-blue: #60a5fa;
-  --accent-mint: #6ee7b7;
-  --accent-gold: #f59e0b;
-  --muted: #9aa7bf;
-  --text: #e6eef8;
-  --card: rgba(255, 255, 255, 0.03);
-  --max-width: 1100px;
+:root{
+  --bg:#0b1220;
+  --panel:#111a2e;
+  --panel-soft:#0f1a33;
+  --accent:#4f8cff;
+  --accent-soft:#1b2a4a;
+  --text:#e6edff;
+  --muted:#9aa8c7;
+  --border:rgba(255,255,255,.06);
 }
 
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:radial-gradient(circle at top,#142048,#0b1220);
+  font-family:Inter,system-ui;
+  color:var(--text);
+  line-height:1.65;
 }
 
-body {
-  margin: 0;
-  background: linear-gradient(180deg, var(--bg-start), var(--bg-end));
-  color: var(--text);
-  font-family: "IBM Plex Sans", "Inter", system-ui, sans-serif;
-  line-height: 1.6;
+.wrapper{
+  max-width:1400px;
+  margin:0 auto;
+  padding:50px 40px;
 }
 
-/* PAGE WRAPPER */
-.wrapper {
-  max-width: var(--max-width);
-  margin: 40px auto;
-  padding: 20px;
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:380px 1fr;
+  gap:40px;
 }
 
-/* SECTION CARD */
-.card {
-  background: var(--card);
-  padding: 22px;
-  border-radius: 14px;
-  margin-top: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+/* CARDS */
+.card{
+  background:linear-gradient(180deg,var(--panel),var(--panel-soft));
+  border-radius:22px;
+  padding:28px;
+  border:1px solid var(--border);
+  box-shadow:0 30px 80px rgba(0,0,0,.45);
 }
 
-/* SECTION TITLES */
-h2 {
-  margin-top: 0;
-  font-size: 22px;
-  font-weight: 700;
+/* LEFT COLUMN */
+.sidebar{
+  display:flex;
+  flex-direction:column;
+  gap:28px;
 }
 
-/* PROFILE SECTION */
-.profile {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 28px;
+/* PROFILE */
+.profile{
+  text-align:center;
 }
 
-.profile-photo {
-  width: 100%;
-  height: 280px;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 2px solid rgba(255,255,255,0.05);
+.avatar{
+  width:170px;
+  height:170px;
+  margin:0 auto 18px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),#7aa7ff);
+  padding:4px;
+}
+.avatar img{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
 }
 
-.profile-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.profile h1{
+  font-size:26px;
+  font-weight:800;
 }
 
-.profile-info h1 {
-  font-size: 28px;
-  margin: 0 0 6px;
-  font-weight: 800;
+.profile p{
+  color:var(--accent);
+  font-weight:600;
+  margin-top:6px;
 }
 
-.role {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--accent-blue);
+.profile span{
+  display:block;
+  color:var(--muted);
+  margin-top:4px;
+  font-size:14px;
 }
 
-.location {
-  color: var(--muted);
-  margin-bottom: 10px;
+/* CONTACT ICONS */
+.contact{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  margin-top:18px;
+}
+.contact a{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:var(--accent-soft);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--accent);
+  text-decoration:none;
+  font-size:18px;
+  transition:.25s;
+}
+.contact a:hover{
+  background:var(--accent);
+  color:#fff;
 }
 
-.contact-item {
-  margin-top: 8px;
+/* SECTION TITLE */
+.section-title{
+  font-size:22px;
+  font-weight:800;
+  margin-bottom:16px;
 }
 
-.contact-item strong {
-  width: 90px;
-  display: inline-block;
-  color: var(--muted);
+/* EDUCATION */
+.edu-item{
+  margin-bottom:16px;
 }
-
-.download-btn {
-  display: inline-block;
-  margin-top: 14px;
-  padding: 10px 16px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 700;
-  background: linear-gradient(90deg, var(--accent-gold), #ffcd73);
-  color: #041020;
+.edu-item strong{
+  display:block;
+  font-size:15px;
 }
-
-/* INTRO SUMMARY */
-.summary {
-  font-size: 16px;
-  color: var(--muted);
-}
-
-/* QUICK STATS */
-.stats {
-  display: flex;
-  gap: 16px;
-  margin-top: 18px;
-}
-
-.stat-box {
-  background: rgba(255,255,255,0.05);
-  padding: 14px;
-  border-radius: 10px;
-  text-align: center;
-  min-width: 120px;
-}
-
-.stat-box strong {
-  font-size: 20px;
-  display: block;
-}
-
-/* PROJECTS GRID */
-.projects-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.project {
-  padding: 14px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255,255,255,0.05);
-  transition: transform 0.2s;
-}
-
-.project:hover {
-  transform: translateY(-6px);
-}
-
-.project h3 {
-  margin: 0 0 6px;
-  font-size: 18px;
-}
-
-.project small {
-  color: var(--accent-blue);
-}
-
-/* EXPERIENCE TABLE */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 12px;
-}
-
-td, th {
-  padding: 10px;
-  border-bottom: 1px dashed rgba(255,255,255,0.08);
-}
-
-th {
-  color: var(--muted);
-  font-weight: 600;
+.edu-item span{
+  color:var(--muted);
+  font-size:14px;
 }
 
 /* SKILLS */
-.skill-pill {
-  display: inline-block;
-  padding: 8px 12px;
-  margin: 4px;
-  border-radius: 25px;
-  background: rgba(255,255,255,0.05);
-  font-weight: 600;
-  color: var(--muted);
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.skill{
+  padding:8px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.06);
+  color:var(--muted);
+  font-size:14px;
+  font-weight:600;
 }
 
-/* CONTACT SECTION */
-.contact-block {
-  margin-top: 12px;
+/* RIGHT COLUMN */
+.main{
+  display:flex;
+  flex-direction:column;
+  gap:36px;
 }
 
-footer {
-  text-align: center;
-  margin-top: 30px;
-  color: var(--muted);
-  font-size: 14px;
+/* SUMMARY */
+.summary{
+  font-size:16px;
+  color:var(--muted);
+}
+
+/* EXPERIENCE */
+.exp h3{
+  font-size:18px;
+}
+.exp small{
+  color:var(--accent);
+  font-weight:600;
+}
+.exp ul{
+  margin-top:14px;
+  padding-left:18px;
+}
+.exp li{
+  margin-bottom:10px;
+  color:var(--muted);
+}
+
+/* PROJECTS */
+.projects{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+.project{
+  padding:22px;
+  border-radius:18px;
+  background:linear-gradient(180deg,#141f3f,#0f1a33);
+  border:1px solid var(--border);
+  transition:.3s;
+}
+.project:hover{
+  transform:translateY(-6px);
+  box-shadow:0 25px 60px rgba(0,0,0,.45);
+}
+.project h4{
+  font-size:18px;
+  margin-bottom:6px;
+}
+.project span{
+  color:var(--accent);
+  font-size:13px;
+  font-weight:600;
+}
+.project p{
+  margin-top:10px;
+  color:var(--muted);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  color:var(--muted);
+  margin-top:40px;
+  font-size:14px;
 }
 
 /* RESPONSIVE */
-@media (max-width: 900px) {
-  .profile {
-    grid-template-columns: 1fr;
-  }
-  .profile-photo {
-    height: 220px;
-  }
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
+@media(max-width:1100px){
+  .grid{grid-template-columns:1fr}
+  .projects{grid-template-columns:1fr}
 }
+.project-link{
+  text-decoration:none;
+  color:inherit;
+  display:block;
+}
+
+.project-link:hover .project{
+  transform:translateY(-6px);
+  box-shadow:0 25px 60px rgba(0,0,0,.45);
+}
+
 </style>
 </head>
 
 <body>
-
 <div class="wrapper">
 
-<!-- ============================
-PROFILE SECTION
-============================ -->
-<div class="profile card">
-  <div class="profile-photo">
-    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop" />
+<div class="grid">
+
+<!-- LEFT COLUMN -->
+<aside class="sidebar">
+
+<!-- PROFILE -->
+<div class="card profile">
+  <div class="avatar">
+    <img src="assets/profile.jpg" alt="Ajay Kumar Profile Photo" />
   </div>
+  <h1>Ajay Kumar</h1>
+  <p>Data Science & Monitoring Engineer</p>
+  <span>MSc Data Science · SDU · Denmark</span>
 
-  <div class="profile-info">
-    <h1>Ajay Kumar</h1>
-    <div class="role">Data Monitoring Analyst • MSc Data Science (SDU)</div>
-    <div class="location">Kolding, Denmark</div>
-
-    <div class="contact-item"><strong>Email:</strong> your.email@example.com</div>
-    <div class="contact-item"><strong>LinkedIn:</strong> linkedin.com/in/YOUR-LINKEDIN</div>
-    <div class="contact-item"><strong>GitHub:</strong> github.com/YOUR-GITHUB-USERNAME</div>
-
-    <a class="download-btn" href="YOUR-CV-LINK" target="_blank">Download CV</a>
+  <div class="contact">
+    <a href="mailto:your.email@example.com">✉️</a>
+    <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank">in</a>
+    <a href="https://github.com/YOUR-GITHUB" target="_blank">🐙</a>
   </div>
 </div>
 
-<!-- ============================
-SUMMARY
-============================ -->
+<!-- EDUCATION -->
 <div class="card">
-  <h2>Professional Summary</h2>
+  <div class="section-title">Education</div>
+
+  <div class="edu-item">
+    <strong>MSc Data Science (ICT Systems)</strong>
+    <span>University of Southern Denmark · 2025–2027</span>
+  </div>
+
+  <div class="edu-item">
+    <strong>B.E. Electronics & Communication</strong>
+    <span>CMRIT Bengaluru · CGPA 8.3/10 · 2018–2022</span>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div class="card">
+  <div class="section-title">Skills</div>
+  <div class="skills">
+    <div class="skill">Python</div>
+    <div class="skill">SQL</div>
+    <div class="skill">R</div>
+    <div class="skill">Splunk</div>
+    <div class="skill">ServiceNow ITOM</div>
+    <div class="skill">AWS</div>
+    <div class="skill">Azure</div>
+    <div class="skill">Power BI</div>
+    <div class="skill">Git & GitHub</div>
+    <div class="skill">Dash & Plotly</div>
+  </div>
+</div>
+
+</aside>
+
+<!-- RIGHT COLUMN -->
+<main class="main">
+
+<!-- SUMMARY -->
+<div class="card">
+  <div class="section-title">Professional Summary</div>
   <p class="summary">
-    Master’s student in Data Science with 3 years of enterprise monitoring and cloud experience using Splunk,
-    ServiceNow ITOM, AWS/Azure, Zenoss, and AppDynamics. Strong in Python, SQL, Power BI, and dashboarding.
-    Passionate about building observability platforms, automation, and cost optimization solutions.
+    Master’s student in Data Science at SDU with 3 years of experience in enterprise
+    monitoring and cloud platforms. Strong background in Splunk, ServiceNow ITOM,
+    AWS/Azure, Python, SQL, and Power BI. Seeking student job opportunities to apply
+    data-driven problem solving and automation skills.
   </p>
-
-  <div class="stats">
-    <div class="stat-box">
-      <strong>3 yrs</strong> Experience
-    </div>
-    <div class="stat-box">
-      <strong>3.3k+</strong> Servers monitored
-    </div>
-    <div class="stat-box">
-      <strong>~15%</strong> Cloud cost savings
-    </div>
-  </div>
 </div>
 
-<!-- ============================
-PROJECTS
-============================ -->
-<div class="card">
-  <h2>Featured Projects</h2>
+<!-- EXPERIENCE -->
+<div class="card exp">
+  <div class="section-title">Work Experience</div>
+  <h3>Data Monitoring Analyst — Viatris</h3>
+  <small>Aug 2022 – Aug 2025</small>
+  <ul>
+    <li>End-to-end infrastructure monitoring using Splunk, ServiceNow ITOM, AppDynamics, Zenoss, and SolarWinds.</li>
+    <li>Monitored 800+ UNIX and 2,500+ Windows servers with real-time alerts (20% faster response).</li>
+    <li>Integrated Splunk ITSI with ServiceNow, reducing manual incident effort by 30%.</li>
+    <li>Built Power BI dashboards driving ~$1M projected cost savings.</li>
+    <li>Developed Python automation using Microsoft Graph API for Outlook log ingestion.</li>
+  </ul>
+</div>
 
-  <div class="projects-grid">
+<!-- PROJECTS -->
+<div class="card">
+  <div class="section-title">Projects</div>
+  <div class="projects">
+
+    <a href="https://github.com/YOUR_USERNAME/supply-chain-dashboard"
+   target="_blank"
+   class="project-link">
+
+  <div class="project">
+    <h4>Supply Chain Analytics Dashboard</h4>
+    <span>Python · Dash · Plotly</span>
+    <p>
+      Interactive dashboard analysing supplier lead times,
+      inventory levels, demand forecasting accuracy, and sales performance.
+    </p>
+  </div>
+
+</a>
+
 
     <div class="project">
-      <h3>Cloud Monitoring & Cost Optimization</h3>
-      <small>Splunk · AWS · Azure · Power BI</small>
+      <h4>Cloud Monitoring & Cost Optimization</h4>
+      <span>Splunk · AWS · Azure</span>
       <p>
-        Centralized AWS & Azure logs in Splunk. Built dashboards for usage tracking and cost forecasting.
-        Achieved ~15% cloud cost reduction.
+        Centralized cloud logs and billing data into Splunk dashboards,
+        enabling ~15% cost optimization.
       </p>
     </div>
 
     <div class="project">
-      <h3>Outlook → Splunk Automation</h3>
-      <small>Python · Microsoft Graph API · ServiceNow</small>
+      <h4>Outlook → Splunk Automation</h4>
+      <span>Python · Microsoft Graph API</span>
       <p>
-        Automated email log ingestion using Python and Graph API. Setup Splunk ITSI correlation searches to
-        generate ServiceNow incidents automatically.
+        Automated email log ingestion and ServiceNow incident creation.
       </p>
     </div>
 
     <div class="project">
-      <h3>Infrastructure Dashboards</h3>
-      <small>Splunk · Dashboards</small>
+      <h4>Infrastructure Dashboards</h4>
+      <span>Splunk · Monitoring</span>
       <p>
-        Designed real-time dashboards tracking server performance and uptime trends, improving decision-making.
-      </p>
-    </div>
-
-    <div class="project">
-      <h3>Wearable Health Tracker (Patented)</h3>
-      <small>Embedded · Bluetooth · Sensors</small>
-      <p>
-        Prototyped sensor device for measuring vital signs. Patent No: 202241037877 A.
+        Real-time dashboards for Windows and Linux server health and uptime trends.
       </p>
     </div>
 
   </div>
 </div>
 
-<!-- ============================
-EXPERIENCE
-============================ -->
-<div class="card">
-  <h2>Work Experience</h2>
-
-  <table>
-    <tr>
-      <th>Role</th>
-      <th>Responsibilities & Achievements</th>
-    </tr>
-
-    <tr>
-      <td>
-        <strong>Data Monitoring Analyst</strong><br>
-        <span class="muted">Viatris (2022–2025)</span>
-      </td>
-      <td>
-        <ul>
-          <li>Monitored 800+ UNIX & 2,500+ Windows servers using Splunk.</li>
-          <li>Integrated Splunk ITSI with ServiceNow ITOM to reduce manual incident work by 30%.</li>
-          <li>Built dashboards leading to ~$1M projected cost savings for 2025.</li>
-          <li>Developed Python automation for Outlook → Splunk log ingestion.</li>
-        </ul>
-      </td>
-    </tr>
-  </table>
+</main>
 </div>
 
-<!-- ============================
-SKILLS
-============================ -->
-<div class="card">
-  <h2>Skills</h2>
-
-  <div>
-    <span class="skill-pill">Splunk</span>
-    <span class="skill-pill">ServiceNow ITOM</span>
-    <span class="skill-pill">AWS</span>
-    <span class="skill-pill">Azure</span>
-    <span class="skill-pill">Python</span>
-    <span class="skill-pill">SQL</span>
-    <span class="skill-pill">Power BI</span>
-    <span class="skill-pill">Git</span>
-    <span class="skill-pill">AppDynamics</span>
-    <span class="skill-pill">Zenoss</span>
-  </div>
 </div>
-
-<!-- ============================
-EDUCATION
-============================ -->
-<div class="card">
-  <h2>Education</h2>
-
-  <table>
-    <tr>
-      <th>Degree</th>
-      <th>Institution</th>
-    </tr>
-    <tr>
-      <td><strong>MSc Data Science (2025–2027)</strong></td>
-      <td>University of Southern Denmark (SDU), Kolding</td>
-    </tr>
-    <tr>
-      <td><strong>B.E. Electronics & Communication</strong><br>CGPA: 8.3/10</td>
-      <td>CMR Institute of Technology (CMRIT), Bengaluru</td>
-    </tr>
-  </table>
-</div>
-
-<!-- ============================
-CONTACT SECTION
-============================ -->
-<div class="card" id="contact">
-  <h2>Contact</h2>
-
-  <div class="contact-block">
-    <div><strong>Email:</strong> your.email@example.com</div>
-    <div><strong>LinkedIn:</strong> linkedin.com/in/YOUR-LINKEDIN</div>
-    <div><strong>GitHub:</strong> github.com/YOUR-GITHUB-USERNAME</div>
-  </div>
-</div>
-
-<footer>
-  © 2025 Ajay Kumar — Professional Portfolio. Replace placeholders before publishing.
-</footer>
-
-</div>
-
 </body>
 </html>
