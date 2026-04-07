@@ -20,11 +20,11 @@
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
+
 body{
   background:radial-gradient(circle at top,#142048,#0b1220);
   font-family:Inter,system-ui;
   color:var(--text);
-  line-height:1.65;
 }
 
 .wrapper{
@@ -33,42 +33,44 @@ body{
   padding:50px 40px;
 }
 
-/* GRID */
 .grid{
   display:grid;
-  grid-template-columns:380px 1fr;
+  grid-template-columns:360px 1fr;
   gap:40px;
 }
 
-/* CARDS */
 .card{
   background:linear-gradient(180deg,var(--panel),var(--panel-soft));
-  border-radius:22px;
+  border-radius:20px;
   padding:28px;
   border:1px solid var(--border);
-  box-shadow:0 30px 80px rgba(0,0,0,.45);
+  box-shadow:0 25px 60px rgba(0,0,0,.4);
+  transition:.25s;
 }
 
-/* LEFT COLUMN */
+.card:hover{
+  transform:translateY(-4px);
+}
+
 .sidebar{
   display:flex;
   flex-direction:column;
-  gap:28px;
+  gap:25px;
 }
 
-/* PROFILE */
 .profile{
   text-align:center;
 }
 
 .avatar{
-  width:170px;
-  height:170px;
-  margin:0 auto 18px;
+  width:150px;
+  height:150px;
+  margin:0 auto 16px;
   border-radius:50%;
   background:linear-gradient(135deg,var(--accent),#7aa7ff);
   padding:4px;
 }
+
 .avatar img{
   width:100%;
   height:100%;
@@ -77,33 +79,30 @@ body{
 }
 
 .profile h1{
-  font-size:26px;
+  font-size:24px;
   font-weight:800;
 }
 
 .profile p{
   color:var(--accent);
   font-weight:600;
-  margin-top:6px;
 }
 
 .profile span{
-  display:block;
   color:var(--muted);
-  margin-top:4px;
   font-size:14px;
 }
 
-/* CONTACT ICONS */
 .contact{
   display:flex;
   justify-content:center;
-  gap:16px;
-  margin-top:18px;
+  gap:14px;
+  margin-top:16px;
 }
+
 .contact a{
-  width:44px;
-  height:44px;
+  width:40px;
+  height:40px;
   border-radius:50%;
   background:var(--accent-soft);
   display:flex;
@@ -111,149 +110,130 @@ body{
   justify-content:center;
   color:var(--accent);
   text-decoration:none;
-  font-size:18px;
-  transition:.25s;
+  transition:.2s;
 }
+
 .contact a:hover{
   background:var(--accent);
   color:#fff;
 }
 
-/* SECTION TITLE */
 .section-title{
-  font-size:22px;
+  font-size:20px;
   font-weight:800;
-  margin-bottom:16px;
+  margin-bottom:14px;
 }
 
-/* EDUCATION */
 .edu-item{
-  margin-bottom:16px;
+  margin-bottom:12px;
 }
+
 .edu-item strong{
-  display:block;
-  font-size:15px;
-}
-.edu-item span{
-  color:var(--muted);
   font-size:14px;
 }
 
-/* SKILLS */
+.edu-item span{
+  color:var(--muted);
+  font-size:13px;
+}
+
 .skills{
   display:flex;
   flex-wrap:wrap;
-  gap:10px;
+  gap:8px;
 }
+
 .skill{
-  padding:8px 14px;
+  padding:7px 12px;
   border-radius:999px;
   background:rgba(255,255,255,.06);
   color:var(--muted);
-  font-size:14px;
+  font-size:13px;
   font-weight:600;
+  transition:.2s;
 }
 
-/* RIGHT COLUMN */
+.skill:hover{
+  background:var(--accent);
+  color:#fff;
+  transform:translateY(-2px);
+}
+
 .main{
   display:flex;
   flex-direction:column;
-  gap:36px;
+  gap:30px;
 }
 
-/* SUMMARY */
 .summary{
-  font-size:16px;
   color:var(--muted);
 }
 
-/* EXPERIENCE */
-.exp h3{
-  font-size:18px;
-}
-.exp small{
-  color:var(--accent);
-  font-weight:600;
-}
 .exp ul{
-  margin-top:14px;
+  margin-top:10px;
   padding-left:18px;
 }
+
 .exp li{
-  margin-bottom:10px;
+  margin-bottom:8px;
   color:var(--muted);
 }
 
-/* PROJECTS */
 .projects{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:22px;
+  gap:20px;
 }
+
 .project{
-  padding:22px;
-  border-radius:18px;
+  padding:20px;
+  border-radius:16px;
   background:linear-gradient(180deg,#141f3f,#0f1a33);
   border:1px solid var(--border);
-  transition:.3s;
+  transition:.25s;
 }
+
 .project:hover{
   transform:translateY(-6px);
-  box-shadow:0 25px 60px rgba(0,0,0,.45);
+  box-shadow:0 20px 50px rgba(0,0,0,.4);
 }
+
 .project h4{
-  font-size:18px;
-  margin-bottom:6px;
+  font-size:16px;
 }
+
 .project span{
   color:var(--accent);
-  font-size:13px;
-  font-weight:600;
+  font-size:12px;
 }
+
 .project p{
-  margin-top:10px;
   color:var(--muted);
+  margin-top:8px;
 }
 
-/* FOOTER */
-footer{
-  text-align:center;
-  color:var(--muted);
-  margin-top:40px;
-  font-size:14px;
+.project-link{
+  text-decoration:none;
+  color:inherit;
 }
 
-/* RESPONSIVE */
 @media(max-width:1100px){
   .grid{grid-template-columns:1fr}
   .projects{grid-template-columns:1fr}
 }
-.project-link{
-  text-decoration:none;
-  color:inherit;
-  display:block;
-}
-
-.project-link:hover .project{
-  transform:translateY(-6px);
-  box-shadow:0 25px 60px rgba(0,0,0,.45);
-}
-
 </style>
 </head>
 
 <body>
 <div class="wrapper">
-
 <div class="grid">
 
-<!-- LEFT COLUMN -->
+<!-- LEFT -->
 <aside class="sidebar">
 
-<!-- PROFILE -->
 <div class="card profile">
   <div class="avatar">
-    <img src="assets/profile.jpg" alt="Ajay Kumar Profile Photo" />
+    <img src="assets/profile.jpg">
   </div>
   <h1>Ajay Kumar</h1>
   <p>Data Science & Monitoring Engineer</p>
@@ -266,7 +246,6 @@ footer{
   </div>
 </div>
 
-<!-- EDUCATION -->
 <div class="card">
   <div class="section-title">Education</div>
 
@@ -281,7 +260,6 @@ footer{
   </div>
 </div>
 
-<!-- SKILLS -->
 <div class="card">
   <div class="section-title">Skills</div>
   <div class="skills">
@@ -301,13 +279,12 @@ footer{
 
   <div class="skill">AWS</div>
   <div class="skill">Azure</div>
-  <div class="skill">Git</div>
-  <div class="skill">GitHub</div>
+  <div class="skill">Git & GitHub</div>
 
   <div class="skill">Power BI</div>
   <div class="skill">Excel</div>
   <div class="skill">Splunk Dashboards</div>
-  <div class="skill">Microsoft Office Suite((Excel, PowerPoint, Word)</div>
+  <div class="skill">Microsoft Office Suite</div>
   <div class="skill">Pandas</div>
 
   <div class="skill">SQL Querying</div>
@@ -327,108 +304,63 @@ footer{
   <div class="skill">Communication</div>
   <div class="skill">Teamwork</div>
   <div class="skill">Attention to Detail</div>
-</div>
+
   </div>
 </div>
 
 </aside>
 
-<!-- RIGHT COLUMN -->
+<!-- RIGHT -->
 <main class="main">
 
-<!-- SUMMARY -->
 <div class="card">
   <div class="section-title">Professional Summary</div>
   <p class="summary">
-    Master's student in Data Science at SDU with 3 years of experience in infrastructure monitoring, data 
-    analysis, and cloud environments (AWS, Azure). Experienced in monitoring platforms including Splunk, 
-    ServiceNow ITOM, Zenoss, AppDynamics, and SolarWinds, with strong skills in Python, SQL, Power BI, and 
-    Git/GitHub. Passionate about analysing data, detecting patterns, and improving processes, while 
-    continuously learning and applying new technologies to support data-driven decision-making. 
+    Master's student in Data Science at SDU with 3 years of experience in infrastructure monitoring, data analysis, and cloud environments (AWS, Azure). Experienced in monitoring platforms including Splunk, ServiceNow ITOM, Zenoss, AppDynamics, and SolarWinds, with strong skills in Python, SQL, Power BI, and Git/GitHub.
   </p>
 </div>
 
-<!-- EXPERIENCE -->
 <div class="card exp">
   <div class="section-title">Work Experience</div>
-  <h3>Data Monitoring Analyst — Viatris</h3>
+  <h3>Data Analyst (Monitoring, Reporting & Automation) — Viatris</h3>
   <small>Aug 2022 – Aug 2025</small>
   <ul>
     <li>End-to-end infrastructure monitoring using Splunk, ServiceNow ITOM, AppDynamics, Zenoss, and SolarWinds.</li>
     <li>Monitored 800+ UNIX and 2,500+ Windows servers with real-time alerts (20% faster response).</li>
     <li>Integrated Splunk ITSI with ServiceNow, reducing manual incident effort by 30%.</li>
-    <li>Built Power BI dashboards driving ~$1M projected cost savings.</li>
+    <li>Built Power BI dashboards supporting cost optimization and operational insights.</li>
     <li>Developed Python automation using Microsoft Graph API for Outlook log ingestion.</li>
-    <li>Built automated data workflows using Python and Splunk for monitoring and reporting.</li>
-    <li>Analyzed monitoring logs to detect anomalies and speed up incident investigation.</li>
-    <li>Led monitoring team, managing incident response across on-prem and cloud systems.</li>
+    <li>Built Python & Splunk workflows for monitoring and reporting automation.</li>
+    <li>Analyzed logs to detect anomalies and accelerate incident investigation.</li>
+    <li>Led monitoring team across on-prem and cloud environments.</li>
   </ul>
 </div>
 
-<!-- PROJECTS -->
 <div class="card">
   <div class="section-title">Projects</div>
   <div class="projects">
 
-    <a href="https://github.com/AjayKumar-DS/supply-chain-dashboard.git"
-   target="_blank"
-   class="project-link">
+    <a href="https://github.com/AjayKumar-DS/supply-chain-dashboard.git" target="_blank" class="project-link">
+      <div class="project">
+        <h4>Supply Chain Analytics Dashboard</h4>
+        <span>Python · Dash · Plotly</span>
+        <p>Interactive dashboard analysing supplier lead times, inventory levels, demand forecasting accuracy, and sales performance.</p>
+      </div>
+    </a>
 
-  <div class="project">
-    <h4>Supply Chain Analytics Dashboard</h4>
-    <span>Python · Dash · Plotly</span>
-    <p>
-      Interactive dashboard analysing supplier lead times,
-      inventory levels, demand forecasting accuracy, and sales performance.
-    </p>
-  </div>
-</a>
-
-<a href="https://github.com/AjayKumar-DS/relational-data-analysis-mysql-python"
-   target="_blank"
-   class="project-link">
-
-<div class="project">
-  <h4>Relational Data Analysis Using MySQL & Python</h4>
-  <span>MySQL · SQL · Python · Pandas</span>
-  <p>
-    SQL-based data analysis with Python integration
-    and basic visualizations.
-  </p>
-</div>
-</a>
-
-    <div class="project">
-      <h4>Cloud Monitoring & Cost Optimization</h4>
-      <span>Splunk · AWS · Azure</span>
-      <p>
-        Centralized cloud logs and billing data into Splunk dashboards,
-        enabling ~15% cost optimization.
-      </p>
-    </div>
-
-    <div class="project">
-      <h4>Outlook → Splunk Automation</h4>
-      <span>Python · Microsoft Graph API</span>
-      <p>
-        Automated email log ingestion and ServiceNow incident creation.
-      </p>
-    </div>
-
-    <div class="project">
-      <h4>Infrastructure Dashboards</h4>
-      <span>Splunk · Monitoring</span>
-      <p>
-        Real-time dashboards for Windows and Linux server health and uptime trends.
-      </p>
-    </div>
+    <a href="https://github.com/AjayKumar-DS/relational-data-analysis-mysql-python" target="_blank" class="project-link">
+      <div class="project">
+        <h4>Relational Data Analysis</h4>
+        <span>MySQL · SQL · Python · Pandas</span>
+        <p>SQL-based analysis with Python integration and visualizations.</p>
+      </div>
+    </a>
 
   </div>
 </div>
 
 </main>
 </div>
-
 </div>
 </body>
 </html>
